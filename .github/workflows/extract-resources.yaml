@@ -27,6 +27,6 @@ jobs:
         if: github.ref == 'refs/heads/master'
         run: |
           cd output/
-          for file in `find . -not -type d`; do
+          for file in `find cliki -not -type d`; do
             gsutil -h "Content-Type:application/json" cp $file gs://quickdocs-resources/$file
           done
