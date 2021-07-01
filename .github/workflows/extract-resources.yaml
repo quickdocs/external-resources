@@ -22,7 +22,7 @@ jobs:
           docker build -t quickdocs/external-resources .
       - name: Extract
         run: |
-          docker run --rm -i quickdocs/external-resources
+          docker run --rm -i -v ${PWD}/output:/app/output quickdocs/external-resources
       - name: Upload to GCS
         if: github.ref == 'refs/heads/master'
         run: |
