@@ -62,7 +62,7 @@
                  "#content #article .category" (text))))
         :test #'string=))))
 
-(defun generate-cliki-topics (out release-names &key (interval 5))
+(defun generate-cliki-topics (out release-names &key (interval 10))
   (let ((all-count (length release-names)))
     (format out "~&{~%")
     (loop for i from 1
