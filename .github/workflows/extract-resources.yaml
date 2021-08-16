@@ -3,7 +3,7 @@ name: Extract external resources
 on:
   push:
   schedule:
-    - cron: '0 21 * * *'
+    - cron: '0 21 */14 * *'
 
 jobs:
   extract:
