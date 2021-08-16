@@ -16,7 +16,7 @@
           (quri:url-encode page)))
 
 (defun cliki-topics-under (topic)
-  (let ((body (dex:get (cliki.net topic))))
+  (let ((body (dex:get (cliki.net topic) :use-connection-pool nil)))
     (coerce
       (lquery:$ (initialize body)
         "#article li a:first-child.internal"
@@ -44,7 +44,7 @@
   (let ((url (cliki.net (if (string= name "cl+ssl")
                             "cl-plus-ssl"
                             name))))
-    (handler-case (dex:get url)
+    (handler-case (dex:get url :use-connection-pool nil)
       (dex:http-request-not-found () nil))))
 
 (defun cliki-topics-of (name)
