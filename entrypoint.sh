@@ -2,6 +2,6 @@
 
 QUICKLISP_HOME=.qlot/
 
-exec ros \
+exec ros -S . \
   -e '(progn (format *error-output* "~&Loading...~%") (ql:quickload :external-resources :silent t))' \
   -e '(external-resources::main)'
