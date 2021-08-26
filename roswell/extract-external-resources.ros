@@ -9,7 +9,7 @@ exec ros -Q -L sbcl-bin -- $0 "$@"
 
 (defpackage #:ros/script/external-resources
   (:use #:cl))
-(in-package #:ros/script/qlot)
+(in-package #:ros/script/external-resources)
 
 (defun main (&rest argv)
   (declare (ignore argv))

@@ -2,4 +2,4 @@
 
 QUICKLISP_HOME=.qlot/
 
-exec ./roswell/extract-external-resources.ros
+exec ros -S . ./roswell/extract-external-resources.ros
