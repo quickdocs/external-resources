@@ -1,0 +1,16 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -L sbcl-bin -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  (ql:quickload '(:external-resources) :silent t))
+
+(defpackage #:ros/script/external-resources
+  (:use #:cl))
+(in-package #:ros/script/qlot)
+
+(defun main (&rest argv)
+  (declare (ignore argv))
+  (external-resources::main))
