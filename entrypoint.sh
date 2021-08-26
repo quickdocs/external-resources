@@ -1,5 +1,7 @@
 #!/bin/bash
 
-exec sbcl --noinform --non-interactive --load .qlot/setup.lisp \
-  --eval '(progn (format *error-output* "~&Loading...~%") (ql:quickload :external-resources :silent t))' \
-  --eval '(external-resources::main)'
+QUICKLISP_HOME=.qlot/
+
+exec ros \
+  -e '(progn (format *error-output* "~&Loading...~%") (ql:quickload :external-resources :silent t))' \
+  -e '(external-resources::main)'
