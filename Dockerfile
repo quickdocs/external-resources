@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . /app
 RUN qlot install
 
-FROM clfoundation/sbcl
+FROM clfoundation/sbcl:slim
 
 WORKDIR /app
 COPY --from=0 /app /app
